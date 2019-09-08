@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class CreateUser extends Component {
   state = { username: "" };
@@ -11,6 +12,9 @@ class CreateUser extends Component {
     e.preventDefault();
     const newUser = { username: this.state.username };
     console.log("New User Created...", newUser);
+    axios
+      .post("http://localhost:5000/users/add", newUser)
+      .then(res => console.log(res.data));
     this.setState({ username: "" });
   };
 
