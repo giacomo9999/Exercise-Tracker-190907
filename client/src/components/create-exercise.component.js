@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 class CreateExercise extends Component {
   state = {
@@ -26,8 +28,8 @@ class CreateExercise extends Component {
     this.setState({ duration: e.target.value });
   };
 
-  onChangeDate = e => {
-    this.setState({ date: "date" });
+  onChangeDate = date => {
+    this.setState({ date: date });
   };
 
   onSubmit = e => {
@@ -72,13 +74,8 @@ class CreateExercise extends Component {
             onChange={this.onChangeDuration}
           />
           <label className="h-label">Date</label>
-          <input
-            className="h-input"
-            type="text"
-            name="date"
-            value={this.state.date}
-            onChange={this.onChangeDate}
-          />
+          <DatePicker selected={this.state.date} onChange={this.onChangeDate} />
+          
           <div className="spacer10" />
           <button type="submit">Create New Entry</button>
         </form>

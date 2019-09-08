@@ -12,7 +12,7 @@ class Navbar extends Component {
           <h3>Exercises</h3>
         </Link>
         <Link to="/create">
-          <h3>Create Exercise Log</h3>
+          <h3>Add Log Entry</h3>
         </Link>
         <Link to="/user">
           <h3>Add User</h3>
