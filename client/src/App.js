@@ -10,9 +10,10 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <div className="container-outer">
+      <Navbar />
+      <div className="container-outer main">
         <h2>Exercise Tracker</h2>
-        <Navbar />
+
         <Route path="/" exact component={ExercisesList} />
         <Route path="/edit/:id" component={EditExercise} />
         <Route path="/create" component={CreateExercise} />

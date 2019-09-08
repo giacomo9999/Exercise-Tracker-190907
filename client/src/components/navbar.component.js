@@ -1,8 +1,24 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   render() {
-    return <h2>I Am The Navbar</h2>;
+    return (
+      <div className="navbar">
+        <Link to="/">
+          <h3>ExTracker</h3>
+        </Link>
+        <Link to="/">
+          <h3>Exercises</h3>
+        </Link>
+        <Link to="/create">
+          <h3>Create Exercise Log</h3>
+        </Link>
+        <Link to="/user">
+          <h3>Add User</h3>
+        </Link>
+      </div>
+    );
   }
 }
 
