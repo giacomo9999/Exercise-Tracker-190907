@@ -29,7 +29,7 @@ class CreateExercise extends Component {
 
   onChangeUserName = e => {
     this.setState({ username: e.target.value });
-    // console.log(this.state);
+    console.log(this.state.users);
   };
 
   onChangeDescription = e => {
@@ -60,18 +60,22 @@ class CreateExercise extends Component {
   };
 
   render() {
+    const usersList = this.state.users.map((entry, index) => (
+      <option key={index} value={entry}>
+        {entry}
+      </option>
+    ));
+    console.log("Render Users: ", this.state);
+
     return (
       <div className="container-inner">
         <h2>Create New Exercise Log</h2>
         <form className="h-form" onSubmit={this.onSubmit}>
           <label className="h-label">User Name</label>
-          <input
-            className="h-input"
-            type="text"
-            name="username"
-            value={this.state.username}
-            onChange={this.onChangeUserName}
-          />
+
+          <select name="username" onChange={this.onChangeUserName}>
+            {usersList}
+          </select>
           <label className="h-label">Description</label>
           <input
             className="h-input"
